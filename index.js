@@ -7,7 +7,9 @@ async function enable() {
     await window.webln.enable();
     alert("enabled")
   } catch (error) {
-    alert("User denied permission or cancelled.", error);
+    alert("User denied permission or cancelled.");
+    alert(error.toString());
+    console.log("error", error);
   }
 }
 
