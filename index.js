@@ -30,7 +30,6 @@ async function makeInvoice() {
       amount: 21
     });
     showResult(result);    
-    celebrate();
   } catch (error) {
     console.log(error);
     alert("An error occurred during the makeInvoice() call.");
@@ -47,7 +46,6 @@ async function sendPayment() {
     const invoice = prompt("Please provide an invoice (lnbc...)");
     const result = await window.webln.sendPayment(invoice);
     showResult(result);
-    celebrate();
   } catch (error) {
     alert("An error occurred during the payment.");
   }
