@@ -32,7 +32,8 @@ async function makeInvoice() {
     showResult(result);    
   } catch (error) {
     console.log(error);
-    alert("An error occurred during the makeInvoice() call.");
+    jstest.postMessage(error.toString());
+    alert(error.toString());
   }
 }
 
@@ -47,7 +48,8 @@ async function sendPayment() {
     const result = await window.webln.sendPayment(invoice);
     showResult(result);
   } catch (error) {
-    alert("An error occurred during the payment.");
+    jstest.postMessage(error.toString());
+    alert(error.toString());
   }
 }
 
