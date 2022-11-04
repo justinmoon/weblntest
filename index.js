@@ -5,9 +5,9 @@ async function enable() {
 
   try {
     await window.webln.enable();
-    celebrate();
+    alert("enabled")
   } catch (error) {
-    alert("User denied permission or cancelled.");
+    alert("User denied permission or cancelled.", error);
   }
 }
 
@@ -16,9 +16,3 @@ function showResult(result) {
   resultElement.innerText = JSON.stringify(result, null, 4);
   resultElement.style.display = "block";
 }
-
-function celebrate() {
-  const jsConfetti = new JSConfetti();
-  jsConfetti.addConfetti({ emojis: ["⚡"] });
-}
-
